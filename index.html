@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fargeleggingssider - Gratis fargelegging for barn og voksne</title>
+  <meta name="description" content="Fargeleggingssider.com - Gratis fargeleggingssider for barn og voksne. Store utvalg av tegninger for fargelegging.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Roboto, -apple-system, sans-serif;
+      background: #fcf9f5;
+      color: #2d1f14;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER - Vintage style ===== */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0 20px;
+      margin-bottom: 30px;
+      border-bottom: 3px solid rgba(235, 167, 127, 0.15);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      border-radius: 50%;
+      border: 3px solid rgba(235, 167, 127, 0.12);
+      padding: 2px;
+      background: white;
+    }
+
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #2d1f14;
+      letter-spacing: -0.5px;
+    }
+
+    .logo h1 span {
+      color: #d4856a;
+    }
+
+    .logo p {
+      font-size: 0.7rem;
+      color: #8a7a6a;
+      margin-top: 1px;
+      font-weight: 400;
+    }
+
+    .header-badge {
+      background: linear-gradient(135deg, #d4856a, #e8a78a);
+      color: white;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 4px 25px rgba(212, 133, 106, 0.15);
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== HERO - Center with floating elements ===== */
+    .hero {
+      background: linear-gradient(135deg, #fcf5ef 0%, #f8ece4 100%);
+      border-radius: 60px 60px 40px 40px;
+      padding: 55px 50px 45px;
+      margin-bottom: 45px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(235, 167, 127, 0.06);
+      box-shadow: 0 20px 60px rgba(212, 133, 106, 0.04);
+    }
+
+    .hero::before {
+      content: '✧ ✦ ✧';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 5rem;
+      color: #d4856a;
+      opacity: 0.03;
+      letter-spacing: 25px;
+    }
+
+    .hero::after {
+      content: '✦ ✧ ✦';
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      font-size: 4rem;
+      color: #d4856a;
+      opacity: 0.02;
+      letter-spacing: 20px;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content .badge {
+      background: rgba(212, 133, 106, 0.06);
+      border: 1px solid rgba(212, 133, 106, 0.08);
+      color: #d4856a;
+      padding: 4px 20px;
+      border-radius: 50px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 14px;
+      color: #2d1f14;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-content h2 em {
+      color: #d4856a;
+      font-style: normal;
+      background: rgba(212, 133, 106, 0.04);
+      padding: 0 12px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    .hero-content p {
+      font-size: 1.05rem;
+      color: #5a4a3a;
+      margin-bottom: 20px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .hero-stats .stat .number {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #d4856a;
+      line-height: 1;
+    }
+
+    .hero-stats .stat .label {
+      font-size: 0.7rem;
+      color: #8a7a6a;
+      font-weight: 500;
+      display: block;
+    }
+
+    .hero-image {
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-image img {
+      max-height: 200px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      filter: drop-shadow(0 10px 30px rgba(212, 133, 106, 0.04));
+    }
+
+    /* ===== FEATURES - Dạng tag ===== */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 45px;
+    }
+
+    .feature-item {
+      background: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(212, 133, 106, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(212, 133, 106, 0.04);
+      border-color: rgba(212, 133, 106, 0.08);
+    }
+
+    .feature-item .icon {
+      font-size: 1.3rem;
+    }
+
+    .feature-item .text h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #2d1f14;
+    }
+
+    .feature-item .text p {
+      font-size: 0.65rem;
+      color: #8a7a6a;
+      margin-top: -2px;
+    }
+
+    /* ===== ABOUT - Layout 2 cột ===== */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .about-main {
+      background: white;
+      padding: 30px 35px;
+      border-radius: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(212, 133, 106, 0.03);
+      position: relative;
+    }
+
+    .about-main::after {
+      content: '✧';
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-size: 4rem;
+      color: #d4856a;
+      opacity: 0.03;
+    }
+
+    .about-main h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #2d1f14;
+      letter-spacing: -0.5px;
+    }
+
+    .about-main h3 span {
+      color: #d4856a;
+    }
+
+    .about-main p {
+      font-size: 0.88rem;
+      color: #4a3a2a;
+      margin-bottom: 6px;
+    }
+
+    .about-main strong {
+      color: #d4856a;
+    }
+
+    .about-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .about-side .info-card {
+      background: white;
+      padding: 18px 22px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(212, 133, 106, 0.03);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .about-side .info-card:hover {
+      border-color: rgba(212, 133, 106, 0.06);
+      transform: translateX(4px);
+    }
+
+    .about-side .info-card .icon-box {
+      width: 40px;
+      height: 40px;
+      background: rgba(212, 133, 106, 0.04);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .about-side .info-card .content .label {
+      font-size: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #9a8a7a;
+      font-weight: 600;
+      display: block;
+    }
+
+    .about-side .info-card .content .value {
+      font-size: 0.82rem;
+      color: #2d1f14;
+      font-weight: 500;
+    }
+
+    .about-side .info-card .content .value a {
+      color: #2d1f14;
+      text-decoration: none;
+      border-bottom: 2px solid rgba(212, 133, 106, 0.06);
+      transition: 0.2s;
+    }
+
+    .about-side .info-card .content .value a:hover {
+      color: #d4856a;
+      border-bottom-color: #d4856a;
+    }
+
+    .about-side .info-card .content .value .address-text {
+      color: #2d1f14;
+      font-size: 0.75rem;
+    }
+
+    /* ===== SOCIAL - Dạng 3 cột ===== */
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin: 25px 0 30px;
+    }
+
+    .social-card {
+      background: white;
+      border-radius: 24px;
+      padding: 20px 20px 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(212, 133, 106, 0.03);
+      transition: all 0.3s ease;
+    }
+
+    .social-card:hover {
+      border-color: rgba(212, 133, 106, 0.05);
+      box-shadow: 0 8px 30px rgba(212, 133, 106, 0.02);
+      transform: translateY(-3px);
+    }
+
+    .social-card .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(212, 133, 106, 0.03);
+      margin-bottom: 10px;
+    }
+
+    .social-card .card-header .title {
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #2d1f14;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .social-card .card-header .count {
+      background: linear-gradient(135deg, #d4856a, #e8a78a);
+      color: white;
+      font-size: 0.55rem;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    .social-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .social-list a {
+      color: #4a3a2a;
+      text-decoration: none;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 6px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .social-list a:hover {
+      background: rgba(212, 133, 106, 0.02);
+      color: #2d1f14;
+      padding-left: 10px;
+    }
+
+    .social-list .icon-sm {
+      font-size: 0.85rem;
+      width: 22px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .social-list .link-text {
+      word-break: break-all;
+      font-size: 0.7rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      margin-top: 40px;
+      padding: 25px 0 15px;
+      border-top: 2px solid rgba(212, 133, 106, 0.04);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #8a7a6a;
+    }
+
+    .footer a {
+      color: #2d1f14;
+      text-decoration: none;
+      border-bottom: 2px solid rgba(212, 133, 106, 0.04);
+      padding-bottom: 2px;
+      transition: 0.2s;
+    }
+
+    .footer a:hover {
+      color: #d4856a;
+      border-bottom-color: #d4856a;
+    }
+
+    .footer .footer-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero {
+        padding: 40px 30px 30px;
+        border-radius: 40px;
+      }
+
+      .hero-content h2 {
+        font-size: 2.4rem;
+      }
+
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 20px 0;
+      }
+
+      .logo {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo img {
+        height: 42px;
+      }
+
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+
+      .hero {
+        padding: 30px 20px 25px;
+        border-radius: 32px;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 4px;
+        align-items: center;
+      }
+
+      .hero-image img {
+        max-height: 150px;
+      }
+
+      .features {
+        gap: 8px;
+      }
+
+      .feature-item {
+        padding: 8px 16px;
+        border-radius: 30px;
+      }
+
+      .feature-item .text h4 {
+        font-size: 0.75rem;
+      }
+
+      .about-main {
+        padding: 20px 18px;
+      }
+
+      .about-side .info-card {
+        padding: 14px 16px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-card {
+        padding: 16px;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+
+      .footer .footer-links {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h2 {
+        font-size: 1.6rem;
+      }
+
+      .header-badge {
+        font-size: 0.65rem;
+        padding: 5px 14px;
+      }
+
+      .hero-image img {
+        max-height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <img src="logo.jpg" alt="Fargeleggingssider logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22 viewBox=%220 0 50 50%22%3E%3Crect width=%2250%22 height=%2250%22 rx=%2225%22 fill=%22%23d4856a%22/%3E%3Ctext x=%2225%22 y=%2232%22 text-anchor=%22middle%22 font-size=%2224%22 fill=%22white%22%3EF%3C/text%3E%3C/svg%3E'">
+        <div>
+          <h1><span>Farge</span>leggingssider</h1>
+          <p>Gratis fargeleggingssider · for barn og voksne</p>
+        </div>
+      </div>
+      <div class="header-badge">
+        🎨 Begynn å fargelegge
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">✨ Utforsk kreativiteten</span>
+        <h2>Fargelegging <em>for alle</em></h2>
+        <p>Store utvalg av tegninger for fargelegging – dyr, eventyrfigurer, natur, høytider og populære karakterer.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="number">1000+</span>
+            <span class="label">Fargeleggingssider</span>
+          </div>
+          <div class="stat">
+            <span class="number">20+</span>
+            <span class="label">Kategorier</span>
+          </div>
+          <div class="stat">
+            <span class="number">∞</span>
+            <span class="label">Kreativitet</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="banner.png" alt="Fargeleggingssider banner" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22 viewBox=%220 0 300 200%22%3E%3Crect width=%22300%22 height=%22200%22 fill=%22%23fcf5ef%22 rx=%2216%22/%3E%3Ctext x=%22150%22 y=%22100%22 text-anchor=%22middle%22 font-size=%2230%22 fill=%22%23d4856a%22%3E🎨%3C/text%3E%3Ctext x=%22150%22 y=%22140%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%238a7a6a%22%3EFargeleggingssider%3C/text%3E%3C/svg%3E'">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES - Dạng tag ===== -->
+    <div class="features">
+      <div class="feature-item">
+        <span class="icon">🖨️</span>
+        <div class="text">
+          <h4>Enkel utskrift</h4>
+          <p>Last ned og skriv ut</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="icon">📱</span>
+        <div class="text">
+          <h4>Alle enheter</h4>
+          <p>PC, nettbrett, mobil</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="icon">🧩</span>
+        <div class="text">
+          <h4>Utvikling</h4>
+          <p>Finmotorikk, konsentrasjon</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="icon">🛡️</span>
+        <div class="text">
+          <h4>Trygt miljø</h4>
+          <p>Innhold for hele familien</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <div class="about-wrap">
+      <div class="about-main">
+        <h3>🌱 Om <span>Fargeleggingssider</span>.com</h3>
+        <p><strong>Fargeleggingssider.com</strong> tilbyr et stort utvalg av tegninger for fargelegging som passer for både barn og voksne. Enten du liker søte dyr, kjøretøy, eventyrfigurer, natur, høytider eller populære karakterer, finnes det alltid noe som vekker kreativiteten. Samlingen oppdateres jevnlig med nye motiver, slik at du alltid kan oppdage spennende fargeleggingssider som passer ulike aldre, interesser og ferdighetsnivåer.</p>
+        <p>Alle sidene er enkle å skrive ut, noe som gjør dem perfekte både til koselige stunder hjemme, kreative aktiviteter i barnehagen eller undervisning på skolen. Fargelegging er en flott måte å utvikle finmotorikk, konsentrasjon og fantasi på, samtidig som det gir rom for å uttrykke egen stil gjennom farger og kreativitet.</p>
+        <p>✔ Utforsk de mange kategoriene og la deg inspirere av et variert utvalg som gjør det enkelt å finne akkurat det motivet du leter etter.</p>
+      </div>
+      <div class="about-side">
+        <div class="info-card">
+          <div class="icon-box">🌐</div>
+          <div class="content">
+            <span class="label">Website</span>
+            <div class="value">
+              <a href="https://fargeleggingssider.com/" target="_blank">fargeleggingssider.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="icon-box">📍</div>
+          <div class="content">
+            <span class="label">Adresse</span>
+            <div class="value">
+              <span class="address-text">Fornebuveien 1-3, 1366 Lysaker, Norway</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SOCIAL BLOCKS - 3 cột ===== -->
+    <div class="social-grid">
+      <!-- Block 1 -->
+      <div class="social-card">
+        <div class="card-header">
+          <span class="title">🌐 Social</span>
+          <span class="count">1/3</span>
+        </div>
+        <div class="social-list">
+          <a href="https://webfargeleggingssider.blogspot.com/" target="_blank">
+            <span class="icon-sm">📝</span>
+            <span class="link-text">webfargeleggingssider.blogspot.com/</span>
+          </a>
+          <a href="https://fargeleggingssider.github.io/" target="_blank">
+            <span class="icon-sm">🐙</span>
+            <span class="link-text">fargeleggingssider.github.io/</span>
+          </a>
+          <a href="https://sites.google.com/view/webfargeleggingssider/" target="_blank">
+            <span class="icon-sm">🔗</span>
+            <span class="link-text">sites.google.com/view/webfargeleggingssider/</span>
+          </a>
+          <a href="https://webfargeleggingssider.tumblr.com/" target="_blank">
+            <span class="icon-sm">📷</span>
+            <span class="link-text">webfargeleggingssider.tumblr.com/</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Block 2 -->
+      <div class="social-card">
+        <div class="card-header">
+          <span class="title">🌐 Social</span>
+          <span class="count">2/3</span>
+        </div>
+        <div class="social-list">
+          <a href="https://fargeleggingssider.wixsite.com/gratis-fargelegging" target="_blank">
+            <span class="icon-sm">🎨</span>
+            <span class="link-text">fargeleggingssider.wixsite.com/gratis-fargelegging</span>
+          </a>
+          <a href="https://velog.io/@fargeleggings/posts" target="_blank">
+            <span class="icon-sm">✍️</span>
+            <span class="link-text">velog.io/@fargeleggings/posts</span>
+          </a>
+          <a href="https://listed.to/@fargeleggingssider" target="_blank">
+            <span class="icon-sm">📌</span>
+            <span class="link-text">listed.to/@fargeleggingssider</span>
+          </a>
+          <a href="https://substack.com/@fargeleggingssider" target="_blank">
+            <span class="icon-sm">📬</span>
+            <span class="link-text">substack.com/@fargeleggingssider</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Block 3 -->
+      <div class="social-card">
+        <div class="card-header">
+          <span class="title">🌐 Social</span>
+          <span class="count">3/3</span>
+        </div>
+        <div class="social-list">
+          <a href="https://writeupcafe.com/author/fargeleggingssider" target="_blank">
+            <span class="icon-sm">☕</span>
+            <span class="link-text">writeupcafe.com/author/fargeleggingssider</span>
+          </a>
+          <a href="https://fargeleggingssider.bcz.com/" target="_blank">
+            <span class="icon-sm">🌟</span>
+            <span class="link-text">fargeleggingssider.bcz.com/</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div>
+        <strong>Fargeleggingssider.com</strong> © 2026
+      </div>
+      <div class="footer-links">
+        <a href="https://fargeleggingssider.com/" target="_blank">fargeleggingssider.com</a>
+        <span style="color:#c8b8a8;">|</span>
+        <span style="color:#9a8a7a;">Alle rettigheter reservert</span>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
